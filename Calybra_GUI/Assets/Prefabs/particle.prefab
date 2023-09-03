@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5749078370714524298}
   - component: {fileID: 5693478141512949191}
   - component: {fileID: 5732862006519319233}
-  - component: {fileID: 5976950799984970885}
+  - component: {fileID: 3006779797165771977}
   m_Layer: 0
   m_Name: particle
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0000019073486}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &5976950799984970885
+--- !u!50 &3006779797165771977
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193140606}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.11, y: -3.72, z: -0.035666667}
+  m_LocalPosition: {x: 3.123, y: -3.72, z: -0.035666667}
   m_LocalScale: {x: 0.30464116, y: 4.436434, z: 0.07172474}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258360551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.157, y: -1.7134, z: -0.035666592}
+  m_LocalPosition: {x: 3.1700003, y: -1.7134, z: -0.035666592}
   m_LocalScale: {x: 0.09152216, y: 3.90297, z: 0.44485596}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,7 +330,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.47}
-  m_ConnectedAnchor: {x: -0.25675315, y: -0.49369958}
+  m_ConnectedAnchor: {x: -0.25675318, y: -0.49514285}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -686,6 +686,7 @@ GameObject:
   - component: {fileID: 1241274531}
   - component: {fileID: 1241274530}
   - component: {fileID: 1241274529}
+  - component: {fileID: 1241274533}
   m_Layer: 0
   m_Name: leftPlate
   m_TagString: Untagged
@@ -831,6 +832,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1241274533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241274527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5468913b70763bd46abc607076b0162e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tCounter: 0
 --- !u!1 &1347153565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,11 +1161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792000767605271534, guid: f743a9926f0713e4cb9558fab1f61467, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 7792000767605271534, guid: f743a9926f0713e4cb9558fab1f61467, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.85
+      value: 3.87
       objectReference: {fileID: 0}
     - target: {fileID: 7792000767605271534, guid: f743a9926f0713e4cb9558fab1f61467, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1204,7 +1218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7241472699466569602, guid: 7f2432606f702f642ac9b2ee643178a5, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241472699466569602, guid: 7f2432606f702f642ac9b2ee643178a5, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7241472699466569602, guid: 7f2432606f702f642ac9b2ee643178a5, type: 3}
       propertyPath: m_GravityScale
