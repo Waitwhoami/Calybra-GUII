@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 193140607}
   - component: {fileID: 193140611}
   - component: {fileID: 193140610}
-  - component: {fileID: 193140609}
   - component: {fileID: 193140608}
+  - component: {fileID: 193140612}
   m_Layer: 0
   m_Name: righPlate
   m_TagString: Untagged
@@ -184,30 +184,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!233 &193140609
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193140606}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 258360555}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0.44, y: -0.01}
-  m_ConnectedAnchor: {x: -0.02880013, y: -0.4797777}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!50 &193140610
 Rigidbody2D:
   serializedVersion: 4
@@ -281,6 +257,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!232 &193140612
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193140606}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 258360555}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.11, y: -0.01}
+  m_ConnectedAnchor: {x: 0.13, y: -0.02}
+  m_AutoConfigureDistance: 0
+  m_Distance: 2.9
+  m_MaxDistanceOnly: 0
 --- !u!1 &258360551
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +287,7 @@ GameObject:
   - component: {fileID: 258360552}
   - component: {fileID: 258360556}
   - component: {fileID: 258360555}
-  - component: {fileID: 258360554}
+  - component: {fileID: 258360557}
   m_Layer: 0
   m_Name: rightString
   m_TagString: Untagged
@@ -315,30 +310,6 @@ Transform:
   m_Father: {fileID: 2035843125}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!233 &258360554
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258360551}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1189640302}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0.47}
-  m_ConnectedAnchor: {x: -0.25675318, y: -0.49514285}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!50 &258360555
 Rigidbody2D:
   serializedVersion: 4
@@ -412,6 +383,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!232 &258360557
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258360551}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1189640302}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.06, y: 0.16}
+  m_ConnectedAnchor: {x: -0.08, y: -0.497}
+  m_AutoConfigureDistance: 1
+  m_Distance: 1.9465709
+  m_MaxDistanceOnly: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
