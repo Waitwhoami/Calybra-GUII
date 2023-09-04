@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class canvas : MonoBehaviour
 {
-    bool isActive = true;
+    [SerializeField] bool isActive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +14,11 @@ public class canvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            gameObject.SetActive(!isActive);
+            isActive = !isActive;
+            gameObject.GetComponent<Canvas>().enabled = isActive;
+            
         }
     }
 }
