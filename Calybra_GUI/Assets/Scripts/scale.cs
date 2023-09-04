@@ -7,9 +7,12 @@ public class scale : MonoBehaviour
     bool isTouched = false;
     [SerializeField] int tCounter = 0;
     Vector2 pos;
+    Quaternion rot;
+    [SerializeField] public GameObject holds;
     // Start is called before the first frame update
     void Start()
     {
+        rot = transform.rotation;
         pos = transform.position;
     }
 
@@ -18,6 +21,7 @@ public class scale : MonoBehaviour
     {   
         if (tCounter == 0) {
             transform.position = pos;
+            //holds.transform.rotation = rot;
         }
     }
 

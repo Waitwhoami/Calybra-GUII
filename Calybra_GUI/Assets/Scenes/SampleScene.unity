@@ -359,7 +359,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 5
 --- !u!212 &258360556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 3
 --- !u!212 &1189640303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -684,9 +684,9 @@ GameObject:
   - component: {fileID: 1241274528}
   - component: {fileID: 1241274532}
   - component: {fileID: 1241274531}
-  - component: {fileID: 1241274530}
   - component: {fileID: 1241274529}
   - component: {fileID: 1241274533}
+  - component: {fileID: 1241274534}
   m_Layer: 0
   m_Name: leftPlate
   m_TagString: Untagged
@@ -735,30 +735,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!233 &1241274530
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241274527}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1347153566}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0.44, y: -0.01}
-  m_ConnectedAnchor: {x: 0.08424972, y: -0.479009}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!50 &1241274531
 Rigidbody2D:
   serializedVersion: 4
@@ -845,6 +821,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tCounter: 0
+  holds: {fileID: 1189640298}
+--- !u!232 &1241274534
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241274527}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 1347153566}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.51, y: -0.005}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 2.9
+  m_MaxDistanceOnly: 0
 --- !u!1 &1347153565
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +852,7 @@ GameObject:
   - component: {fileID: 1347153570}
   - component: {fileID: 1347153569}
   - component: {fileID: 1347153566}
-  - component: {fileID: 1347153568}
+  - component: {fileID: 1347153571}
   m_Layer: 0
   m_Name: leftString
   m_TagString: Untagged
@@ -884,31 +880,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
---- !u!233 &1347153568
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347153565}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1189640302}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0.47}
-  m_ConnectedAnchor: {x: -0.25675172, y: 0.49458775}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+  m_Constraints: 5
 --- !u!212 &1347153569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -976,6 +948,25 @@ Transform:
   m_Father: {fileID: 2035843125}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!232 &1347153571
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347153565}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1189640302}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.15, y: 0.496}
+  m_AutoConfigureDistance: 1
+  m_Distance: 2.8841248
+  m_MaxDistanceOnly: 0
 --- !u!1 &1788523531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4475538784036308360, guid: 8ed2c5f4404a64e46b2b6df1f9404717, type: 3}
