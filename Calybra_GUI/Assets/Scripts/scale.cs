@@ -21,7 +21,7 @@ public class scale : MonoBehaviour
     {   
         if (tCounter == 0) {
             transform.position = pos;
-            //holds.transform.rotation = rot;
+            holds.transform.rotation = rot;
         }
     }
 
