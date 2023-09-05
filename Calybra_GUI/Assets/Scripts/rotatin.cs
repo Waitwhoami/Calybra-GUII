@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class rotatin : MonoBehaviour
@@ -25,19 +23,20 @@ public class rotatin : MonoBehaviour
         if (!rb.useAutoMass)    //When the user wants to move the bucket around, I make it have a gigantasourus mass, so that the mass of the particles won't drag it down. Gravity is also deactivated.
         {
             rb.mass = 1000000;
-            rb.gravityScale = 0f;  
+            rb.gravityScale = 0f;
         }
 
 
         //this part could probably be written a bit more elegantly
 
-        if (Input.GetKeyDown(KeyCode.Space)) {      //Move the bucket / Release the bucket to weigh it
+        if (Input.GetKeyDown(KeyCode.Space))
+        {      //Move the bucket / Release the bucket to weigh it
 
             rb.useAutoMass = !rb.useAutoMass;
             rb.gravityScale = 1f;           //With no gravity, if the bucket has nothing inside it ain't gonna fall nohow lols
         }
 
-        if(Input.GetKey(KeyCode.LeftArrow))         //Rotate to the left
+        if (Input.GetKey(KeyCode.LeftArrow))         //Rotate to the left
         {
             transform.Rotate(0f, 0f, r * Time.deltaTime);
         }
@@ -45,6 +44,16 @@ public class rotatin : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))       //Rotate to the right
         {
             transform.Rotate(0f, 0f, -r * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))          //Set bucket upwards
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        
+        if (Input.GetKey(KeyCode.DownArrow))        //Set bucket downwards
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
         }
 
         if (Input.GetKey(KeyCode.A))                //Move left
@@ -66,5 +75,7 @@ public class rotatin : MonoBehaviour
         {
             transform.Translate(0f, -v * Time.deltaTime, 0f);
         }
+
+
     }
 }
