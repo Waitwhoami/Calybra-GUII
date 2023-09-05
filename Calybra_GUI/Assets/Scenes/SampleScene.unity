@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r: 50
-  v: 0.5
+  v: 1
 --- !u!1 &1189640298
 GameObject:
   m_ObjectHideFlags: 0
