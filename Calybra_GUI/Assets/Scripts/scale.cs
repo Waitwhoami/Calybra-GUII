@@ -15,7 +15,7 @@ public class scale : MonoBehaviour
         pos = transform.position;
     }
 
-    // Update is called once per frame
+    // Update is called once per frame              
     void Update()
     {   
         if (tCounter == 0) {            //When there's no object touching the left plate, it gets reset to its
