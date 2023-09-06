@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 193140608}
   - component: {fileID: 193140614}
   - component: {fileID: 193140615}
+  - component: {fileID: 193140616}
   m_Layer: 0
   m_Name: righPlate
   m_TagString: Untagged
@@ -152,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193140606}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.202, y: -3.148, z: 0}
+  m_LocalPosition: {x: 3.202, y: -3.146, z: 0}
   m_LocalScale: {x: 0.30464116, y: 4.436434, z: 0.07172474}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,7 +205,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 5
 --- !u!212 &193140611
 SpriteRenderer:
@@ -270,10 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5468913b70763bd46abc607076b0162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tCounter: 0
   holds: {fileID: 1189640298}
-  lp: {fileID: 1241274527}
-  rp: {fileID: 193140606}
 --- !u!255 &193140615
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -292,6 +290,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.00000034234654, y: -0.5}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!114 &193140616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193140606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e9c60a8f1dda846b430930f342836c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouched: 0
+  rp: {fileID: 193140606}
 --- !u!1 &258360551
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +350,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -636,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r: 50
-  v: 1
+  v: 3
 --- !u!4 &608672869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7661906889982431773, guid: 7f2432606f702f642ac9b2ee643178a5, type: 3}
@@ -657,6 +669,8 @@ GameObject:
   - component: {fileID: 1189640307}
   - component: {fileID: 1189640308}
   - component: {fileID: 1189640309}
+  - component: {fileID: 1189640310}
+  - component: {fileID: 1189640311}
   m_Layer: 0
   m_Name: thingThatSlides
   m_TagString: Untagged
@@ -850,6 +864,46 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!231 &1189640310
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189640298}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 1241274531}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.45427176, y: 0.0061524166}
+  m_ConnectedAnchor: {x: -0.49999997, y: -0.000000011253093}
+  m_AutoConfigureDistance: 1
+  m_Distance: 7.7788124
+  m_DampingRatio: 0
+  m_Frequency: 1
+--- !u!231 &1189640311
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189640298}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 193140610}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.5000002, y: 0.00000010706398}
+  m_AutoConfigureDistance: 1
+  m_Distance: 7.720183
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &1241274527
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +918,7 @@ GameObject:
   - component: {fileID: 1241274529}
   - component: {fileID: 1241274533}
   - component: {fileID: 1241274534}
+  - component: {fileID: 1241274535}
   m_Layer: 0
   m_Name: leftPlate
   m_TagString: Untagged
@@ -931,7 +986,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 5
 --- !u!212 &1241274532
 SpriteRenderer:
@@ -997,10 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5468913b70763bd46abc607076b0162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tCounter: 0
   holds: {fileID: 1189640298}
-  lp: {fileID: 1241274527}
-  rp: {fileID: 193140606}
 --- !u!255 &1241274534
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -1019,6 +1071,21 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -0.00000025719783, y: -0.5}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!114 &1241274535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241274527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0287623a797573f4380948d3303e0783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouched: 0
+  lp: {fileID: 1241274527}
+  rp: {fileID: 193140606}
 --- !u!1 &1347153565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1118,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -3592,7 +3659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7241472699466569602, guid: 7f2432606f702f642ac9b2ee643178a5, type: 3}
       propertyPath: m_CollisionDetection
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7661906889982431773, guid: 7f2432606f702f642ac9b2ee643178a5, type: 3}
       propertyPath: m_RootOrder
