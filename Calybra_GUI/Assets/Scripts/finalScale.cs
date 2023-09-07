@@ -28,7 +28,7 @@ public class finalScale : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(rb.velocity.y <= 0 ) {
-            rb.bodyType = RigidbodyType2D.Static;
+            //rb.bodyType = RigidbodyType2D.Static;
         }
     }
 }
