@@ -4,6 +4,7 @@ public class rotatin : MonoBehaviour
 {
     [SerializeField] float r = 50;      //Rotating speed
     [SerializeField] float v = 50;      //Moving speed
+    bool mode = false;
 
     //It's probably better to change those speeds in the inspector: as a matter of fact, the values in this script are not correct. I added SerializeField for a reason. Click on the bucket in the scene hiererchy
     //and scroll down until you see this component script attached to the gameobject.
@@ -20,20 +21,24 @@ public class rotatin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!rb.useAutoMass)    //When the user wants to move the bucket around, I make it have a gigantasourus mass, so that the mass of the particles won't drag it down. Gravity is also deactivated.
+
+        if (!mode)
         {
-            rb.mass = 1000000;
-            rb.gravityScale = 0f;
+            rb.bodyType = RigidbodyType2D.Static;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         }
-
-
+        else
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        }
         //this part could probably be written a bit more elegantly
 
         if (Input.GetKeyDown(KeyCode.Space))
         {      //Move the bucket / Release the bucket to weigh it
 
-            rb.useAutoMass = !rb.useAutoMass;
-            rb.gravityScale = 1f;           //With no gravity, if the bucket has nothing inside it ain't gonna fall nohow lols
+            mode = !mode;
+            
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))         //Rotate to the left

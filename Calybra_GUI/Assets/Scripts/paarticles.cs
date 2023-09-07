@@ -17,8 +17,8 @@ public class paarticles : MonoBehaviour
     void Update()
     {
        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
-            sr.enabled = false;
-            c2d.enabled = false;
+            sr.enabled = !sr.enabled;
+            c2d.enabled = !c2d.enabled;
 
 
         }
